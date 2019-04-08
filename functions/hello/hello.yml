@@ -1,0 +1,7 @@
+# it points to the root of the project
+hello:
+  handler: functions/hello/handler.hello
+  events:
+    - http:
+        method: get
+        path: hello

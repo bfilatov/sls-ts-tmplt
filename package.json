@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "aws-lambda": "^0.1.2",
+    "lodash": "^4.17.11",
     "source-map-support": "^0.5.10"
   },
   "devDependencies": {
