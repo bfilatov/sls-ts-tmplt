@@ -6,8 +6,9 @@ export const hello: APIGatewayProxyHandler = async () => {
   return {
     statusCode: 200,
     body: JSON.stringify({
-      function: 'Hello v0.0.5',
-      _: _.VERSION
+      function: 'Hello v0.0.6',
+      _: _.VERSION,
+      env: process.env.ENV || null,
     }),
   };
 };

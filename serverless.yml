@@ -10,6 +10,17 @@ provider:
   name: aws
   runtime: nodejs8.10
   profile: sls-deploy
+  stage: ${opt:stage, 'prod'}
+  package:
+    excexcludeDevDependencies: true
+    exclude:
+     - .git/**
+     - .vscode/**
+     - .idea/**
+     - .test/**
+
+environment:
+  ${file(./environments/${self:provider.stage}.yml)}
 
 functions:
   - ${file(./functions/hello/hello.yml)}
