@@ -19,8 +19,16 @@ provider:
      - .idea/**
      - .test/**
 
-environment:
-  ${file(./environments/${self:provider.stage}.yml)}
+  environment:
+    ${file(./environments/${self:provider.stage}.yml)}
+
+custom:
+  stage: ${opt:stage, self:provider.stage}
+  prefix: ${self:custom.stage}-${self:service}
+  process: ${self:custom.prefix}-process
+
+  serverless-offline:
+    host: '0.0.0.0'
 
 functions:
   - ${file(./functions/hello/hello.yml)}
