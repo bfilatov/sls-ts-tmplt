@@ -10,6 +10,7 @@ provider:
   name: aws
   runtime: nodejs8.10
   profile: sls-deploy
+  role: arn:aws:iam::281940878271:role/testdeploy-role
   stage: ${opt:stage, 'prod'}
   package:
     excexcludeDevDependencies: true
