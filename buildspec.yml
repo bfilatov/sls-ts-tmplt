@@ -4,6 +4,7 @@ phases:
   install:
     commands:
       - npm install -g serverless
+      - npm install serverless-webpack --save-dev
   post_build:
     commands:
       - serverless deploy --region us-east-1 --verbose
